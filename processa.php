@@ -13,7 +13,6 @@ $telefone = $_POST['telefone'] ?? '';
 $celular = $_POST['celular'] ?? '';
 $email = $_POST['email'] ?? '';
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
