@@ -73,3 +73,64 @@ button {
 button:hover {
     background-color: #d0d0d0;
 }
+
+
+/*  */
+.dashboard {
+    display: grid;
+    grid-template-areas: "a c"
+                         "b c";
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto 1fr;
+    align-items: center;
+    gap: 2vh;
+    background-color: #f2f2f2;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    height: 75vh;
+    width: 90%;
+    padding: 20px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+}
+
+.navBar {
+    padding: 2vh;
+    background-color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap:2;
+    text-align: center;
+    grid-area: a;
+}
+
+.loginSection {
+    grid-area: b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0e0e0;
+    margin-top: auto;
+    border-radius: 2vh;
+    padding: 1vh;
+}
+
+.usersList {
+    grid-area: c;
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.userCard {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+}
