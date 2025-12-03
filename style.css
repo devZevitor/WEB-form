@@ -28,6 +28,12 @@ form {
     flex-direction: column;
 }
 
+.form-inline {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
 label {
     font-size: 14px;
     margin-top: 8px;

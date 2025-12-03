@@ -23,7 +23,7 @@
                 </div>
                 <div class="input-group">
                     <label for="senha">Senha:</label>
-                    <input type="text" id="senha" name="senha" required>
+                    <input type="password" id="senha" name="senha" required>
                 </div>
             </div>
            

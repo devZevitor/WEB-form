@@ -14,15 +14,19 @@
 
         try {
             if ($conn->query($sql) === TRUE) {
-                header("Location: ../index.php");
+                header("Location: ../pages/dashboard.php");
                 exit;
             }
         } catch (mysqli_sql_exception $e) {
             if ($e->getcode() == 1062) {
-                header("Location: index.php");
+                header("Location: ../pages/dashboard.php");
                 exit;
             }
-            error_log('Dados não foram inseridos: ' . $e->getMessage());
+            echo "<pre>";
+            echo "ERRO SQL:\n";
+            var_dump($e->getMessage());
+            echo "</pre>";
+            exit;
         }
     }
 ?>
