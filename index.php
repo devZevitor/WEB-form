@@ -1,8 +1,6 @@
 <?php
 
-include "./functions/listUsers.php";
 
-$users = listUsers(15);
 ?>
 
 <!DOCTYPE html>
@@ -11,31 +9,29 @@ $users = listUsers(15);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Clientes</title>
+    <title>Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <main class="dashboard">
-        <section class="navBar">
-            <a href="./pages/createUserPage.php">Criar Usuario</a>
-            <a href="">Apagar Usuario</a>
-            <a href="">Atualizar Usuario</a>
-            <a href="">Ver Usuarios</a>
+    <main class="login">
+        <section class="loginForm">
+            <h2>Login</h2>
+            <form action="../functions/loginUser.php" method="POST">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+
+                <button  class="btnFirst">
+                    <a href="./pages/dashboard.php">
+                        Entrar
+                    </a>
+                </button>
+            </form>
         </section>
-        <section class="loginSection">
-            <a href="">Fazer login</a>
-        </section>
-        <section class="usersList">
-           <?php foreach ($users as $user): ?>
-               <div class="userCard">
-                    <p><strong>ID:</strong> <?php echo $user['id']; ?></p>
-                    <p><strong>Nome:</strong> <?php echo $user['nome']; ?></p>
-                    <p><strong>Email:</strong> <?php echo $user['email']; ?></p>
-               </div>
-           <?php endforeach; ?>
-        </section>
-</mainb>
+    </main>
 </body>
 
 </html>

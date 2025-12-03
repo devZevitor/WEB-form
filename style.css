@@ -43,6 +43,45 @@ input {
     box-sizing: border-box;
 }
 
+/*  */
+.login {
+    display: flex;
+    flex-direction: column;
+    gap:2vh;
+    align-items: center;
+    justify-content: center;
+    gap: 2vh;
+    border-radius: 5px;
+    height: 75vh;
+    width: 90%;
+    padding: 20px;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 300px;
+    padding: 2vh;
+    background-color: #FFF;
+    border-radius: 2vh;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+}
+
+.loginForm form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.loginForm form button{
+    color:black;
+}
+
+
+/*  */
+
+
 .form-row {
     display: flex;
     gap: 10px;
@@ -56,6 +95,8 @@ input {
 }
 
 .buttons {
+    display: flex;
+    justify-content: space-between;
     text-align: center;
     margin-top: 15px;
 }
@@ -77,11 +118,9 @@ button:hover {
 
 /*  */
 .dashboard {
-    display: grid;
-    grid-template-areas: "a c"
-                         "b c";
-    grid-template-columns: 1fr 4fr;
-    grid-template-rows: auto 1fr;
+    display: flex;
+    flex-direction: column;
+    gap:2vh;
     align-items: center;
     gap: 2vh;
     background-color: #f2f2f2;
@@ -116,10 +155,14 @@ button:hover {
 }
 
 .usersList {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
     grid-area: c;
     overflow-y: auto;
     width: 100%;
     height: 100%;
+    gap: 1vh;
 }
 
 a {
@@ -127,10 +170,43 @@ a {
 }
 
 .userCard {
+    display: flex;
+    gap:2vh;
     background-color: white;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
-    margin-bottom: 10px;
     box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+}
+
+.btnCRUD {
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+    margin-top: 1vh;
+}
+
+.bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bar button {
+    background-color: #0fa2e6;
+}
+
+.btnFirst {
+    max-height: 25px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    color: white
+}
+
+.bar a {
+    color: white;
 }

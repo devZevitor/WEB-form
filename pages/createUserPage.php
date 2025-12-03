@@ -28,9 +28,9 @@
             </div>
            
             <div class="buttons">
+                <a href="../pages/dashboard.php">Voltar</a>
                 <button type="submit">Cadastrar</button>
             </div>
-            <a href="../index.php">Voltar</a>
         </form>
     </main>
 </body>
