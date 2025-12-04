@@ -1,9 +1,15 @@
 <?php
-
+    session_start();
     include "../functions/listUsers.php";
     include "../functions/deleteUser.php";
     include "../functions/updateUser.php";
+    include "../functions/logout.php";
     $users = listUsers(15);
+
+    if (!isset($_SESSION["user_id"])) {
+        header("Location: ../index.php");
+        exit;
+    }
 
     $editingId = null;
 
@@ -37,6 +43,10 @@
             header("Location: " . $_SERVER['PHP_SELF']);
             exit;
         }
+
+        if(isset($_POST['logout_btn'])) {
+            logout();
+        }
     }
 ?>
 
@@ -60,11 +70,11 @@
                         Criar Usuario
                     </a>
                 </button>
-                <button class="btnFirst" style="background-color: gray;">
-                    <a href="../index.php">
+                <form method="POST">
+                      <button class="btnFirst" style="background-color: gray;" type="submit" name="logout_btn">
                         Logout
-                    </a>
-                </button>
+                    </button>
+                </form>
            </div>
         </section>
         <section class="usersList">
@@ -76,12 +86,13 @@
                             <input type="email" name="email" value="<?php echo $user['email']; ?>">
                         
                             <div>
-                                <button class="btnFirst" style="background-color: green;" type="submit" name="cancel_btn">
-                                Cancelar
-                            </button>
-                            <button class="btnFirst" style="background-color: green;" type="submit" name="update_btn"
+                                <button class="btnFirst" style="background-color: green;" type="submit" name="update_btn"
                                 value="<?php echo $user['id']; ?>">
                                     Salvar
+                                </button>
+
+                                <button class="btnFirst" style="background-color: green;" type="submit" name="cancel_btn">
+                                    Cancelar
                                 </button>
                             </div>
                         </form>
