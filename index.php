@@ -16,7 +16,7 @@
             $user = $result->fetch_assoc();
             if(password_verify($password, $user["senha"])){
                 $_SESSION["user_id"] = $user["id"];
-                header("Location: ../pages/dashboard.php");
+                header("Location: ./pages/dashboard.php");
                 exit;
             } else {
                 echo "<script>alert('Senha incorreta. Tente novamente.');</script>";
@@ -51,7 +51,7 @@
                 <button name="login-btn" type="submit" class="btnFirst">
                     Entrar
                 </button>
-                <a href="/pages/createUserPage.php" style="text-align: center; font-size: 13px;">Ainda não tem conta?</a>
+                <a href="./pages/createUserPage.php" style="text-align: center; font-size: 13px;">Ainda não tem conta?</a>
             </form>
         </section>
     </main>

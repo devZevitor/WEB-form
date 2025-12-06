@@ -1,9 +1,8 @@
 <?php 
-
-    $root = "root" ?? "";
-    $password = "root" ?? "";
-    $host = "mysql";
-    $bdName = "webform_db" ?? "";   
+    $root = "root";
+    $password = getenv("DOCKER_ENV") ? "root" : "";
+    $host = getenv("DOCKER_ENV") ? "mysql" : "localhost";
+    $bdName = "webform_db";   
 
     $conn = new mysqli($host, $root, $password, $bdName);
 
